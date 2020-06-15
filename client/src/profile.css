@@ -1,0 +1,26 @@
+body{
+
+
+}
+.todos{
+height: 30px;
+color:black;
+border-style: solid;
+margin-top: 10px;
+padding-left: 20px;
+padding-top: 5px;
+}
+.todoswrapper input{
+width: 70%;
+margin-left: 20%;
+margin-top: 40px;
+border-top-style: hidden;
+border-left-style: hidden;
+border-bottom-color: darkred;
+outline: none;
+}
+h1{
+color: chartreuse;
+margin-left: 45%;
+
+}
