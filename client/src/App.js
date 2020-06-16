@@ -11,7 +11,7 @@ class App extends Component {
     }
     handlelogin=(username,password,redirect)=>{
       const data={username,password}
-      axios.post('/auth',data,{withCredentials:true}).
+      axios.post('http://localhost:4000/auth',data,{withCredentials:true}).
       then((res)=>{
       if(res.data.user.details)
       {this.setState({status:"LOGGED IN",user:res.data.user.todos})
@@ -21,7 +21,7 @@ class App extends Component {
   
     }
     handlelogout=()=>{
-axios.get('/logout',{withCredentials:true}).then(()=>{
+axios.get('http://localhost:4000/logout',{withCredentials:true}).then(()=>{
 this.setState({status:"NOT_LOGGED_IN",user:[]})
 })
      
@@ -29,7 +29,7 @@ this.setState({status:"NOT_LOGGED_IN",user:[]})
     }
     componentDidMount()
     {  
-     axios.get('/isauthenticated',{withCredentials:true})
+     axios.get('http://localhost:4000/isauthenticated',{withCredentials:true})
      .then(res=>{
     
          if(res.data.user.details)
@@ -48,7 +48,7 @@ this.setState({status:"NOT_LOGGED_IN",user:[]})
    
     addtodo=(todo)=>{
      
-      axios.post('/addtodos',{todo:todo},{withCredentials:true}).then((res)=>{
+      axios.post('http://localhost:4000/addtodos',{todo:todo},{withCredentials:true}).then((res)=>{
       
        this.setState({user:res.data.todos})
       })
@@ -60,7 +60,7 @@ this.setState({status:"NOT_LOGGED_IN",user:[]})
 
     return (
       <div className="App">
-        love you zindagi
+      
         <BrowserRouter>
         
          <Route exact path="/login"  
