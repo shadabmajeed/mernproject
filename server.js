@@ -6,7 +6,7 @@ const LocalStrategy=require('passport-local').Strategy
 const passport=require('passport')
 const PORT=process.env.PORT||4000
 app.use(cors(
-    {origin:'*',
+    {origin:'https://mernp.herokuapp.com',
     credentials:true,
     preflightContinue:true
 
